@@ -1,0 +1,29 @@
+{% extends "base.html"%}
+{% block title%}
+<title>jinja2</title>
+{% endblock%}
+
+{% block body%}
+{# django的用法：{{ value.name}}#}
+{# jinja2除了支持django的用法，还支持以下用法#}
+<div>{{value['name'] }}</div>
+
+{#if判断 #}
+{% if res %}
+    <div>this is if</div>
+{% else %}
+    <div>this is else</div>
+{% endif%}
+
+{# for循环#}
+{#django的用法：{% for i in list%}#}
+{% for i in lista%}
+    <div>i is {{i}}</div>
+{% endfor%}
+
+{# 使用自定义过滤器#}
+<div>
+    {{vlaue['name'] | myreplace('this','that')}}
+</div>
+
+{% endblock%}
